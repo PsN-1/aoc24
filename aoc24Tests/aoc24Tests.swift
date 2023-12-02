@@ -9,7 +9,7 @@ import XCTest
 @testable import aoc24
 
 final class aoc24Tests: XCTestCase {
-
+    
     func testDay1() {
         let input = inputDay1.components(separatedBy: "\n")
         var result = [Int]()
@@ -17,7 +17,7 @@ final class aoc24Tests: XCTestCase {
             let line = convertString(line)
             let first = line.first { $0.isNumber }
             let last = line.last { $0.isNumber }
-
+            
             result.append(Int("\(first!)\(last!)")!)
         }
         print(result)
@@ -25,18 +25,52 @@ final class aoc24Tests: XCTestCase {
         result.forEach { finalResult += $0 }
         print(finalResult)
     }
-
+    
     func testDay1Pt2() {
         let input = inputDay1.components(separatedBy: "\n")
+        var result = [Int]()
         for line in input {
-            var line = line.components(separatedBy: "")
-
-
+            var chars = Array(line)
+            var first = ""
+            var last = ""
+            
+            // First Number
+        outer: for i in 0..<line.count {
+            if chars[i].isNumber {
+                first = "\(chars[i])"
+                break
+            }
+            for digit in digits {
+                if String(line.dropFirst(i)).hasPrefix(digit.key) {
+                    first = "\(digit.value)"
+                    break outer
+                }
+            }
         }
-
+            
+            // Last Number
+        outer2: for i in (0..<line.count).reversed() {
+            if chars[i].isNumber {
+                last = "\(chars[i])"
+                break
+            }
+            for digit in digits {
+                if String(line.dropLast(line.count - 1 - i)).hasSuffix(digit.key) {
+                    last = "\(digit.value)"
+                    break outer2
+                }
+            }
+        }
+            
+            result.append(Int("\(first)\(last)")!)
+        }
+        print(result)
+        var finalResult = 0
+        result.forEach { finalResult += $0 }
+        print(finalResult)
     }
-
-
+    
+    
     func convertString(_ line: String) -> String {
         var line = line
         let digits = [
@@ -44,20 +78,27 @@ final class aoc24Tests: XCTestCase {
             "two": 2,
             "three": 3,
             "four": 4,
-            "five": 5, ap
+            "five": 5,
             "six": 6,
             "seven": 7,
             "eight": 8,
             "nine": 9
         ]
-        digits.first(where: <#T##((key: String, value: Int)) throws -> Bool#>)
-        for (value, key) in digits {
-
-        }
-
+        
         return line
     }
 }
+let digits = [
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "eight": 8,
+    "nine": 9
+]
 
 let inputDay1Demo = """
 two1nine
