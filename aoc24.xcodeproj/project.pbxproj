@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66F562B02B1B62EC00EACE1D /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F562AF2B1B62EC00EACE1D /* day2.swift */; };
 		C976F7C62B1A0E8500BA7F48 /* aoc24.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C976F7BD2B1A0E8500BA7F48 /* aoc24.framework */; };
 		C976F7CB2B1A0E8500BA7F48 /* aoc24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976F7CA2B1A0E8500BA7F48 /* aoc24Tests.swift */; };
 		C976F7CC2B1A0E8500BA7F48 /* aoc24.h in Headers */ = {isa = PBXBuildFile; fileRef = C976F7C02B1A0E8500BA7F48 /* aoc24.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66F562AF2B1B62EC00EACE1D /* day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2.swift; sourceTree = "<group>"; };
 		C976F7BD2B1A0E8500BA7F48 /* aoc24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = aoc24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C976F7C02B1A0E8500BA7F48 /* aoc24.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aoc24.h; sourceTree = "<group>"; };
 		C976F7C52B1A0E8500BA7F48 /* aoc24Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aoc24Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C976F7CA2B1A0E8500BA7F48 /* aoc24Tests.swift */,
+				66F562AF2B1B62EC00EACE1D /* day2.swift */,
 			);
 			path = aoc24Tests;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C976F7CB2B1A0E8500BA7F48 /* aoc24Tests.swift in Sources */,
+				66F562B02B1B62EC00EACE1D /* day2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
